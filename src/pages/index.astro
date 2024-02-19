@@ -1,19 +1,56 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
-import Badge from '../components/Badge.astro';
+import Layout from "../layouts/Layout.astro"
+
+import AboutMe from "../components/AboutMe.astro"
+import Briefcase from "../components/icons/Briefcase.astro"
+import CodeIcon from "../components/icons/Code.astro"
+import Experience from "../components/Experience.astro"
+import ProfileCheck from "../components/icons/ProfileCheck.astro"
+import Projects from "../components/Projects.astro"
+import SectionContainer from "../components/SectionContainer.astro"
+import Hero from "../components/Hero.astro"
 ---
 
-<Layout title="Portfolio de Renzo - Desarrollador y Programador web">
-	<main>
-		<section class="w-full mx-auto lg:w-[740px] py-44">
-			<h1 class="text-white text-5xl font-bold flex flex-row gap-x-4 pb-10">
-				Hey, soy Renzo <div class="flex justify-center items-center"><Badge>Disponible para trabajar</Badge></div>
-			</h1>
-			<h2 class="text-xl">+15 años de experiencia. Desarrollador Web y Creador de Contenido. De Buenos Aires, Argentina. Especializado en crear aplicaciones únicas</h2>
-			<ul></ul>
-		</section>
+<Layout
+  title="Porfolio de Renzo - Desarrollador y Programador Web"
+  description="Contrata a Renzo para crear tu aplicación web o móvil. Desarrollador Web y Técnico en Programación. Dedicado a desarrollar aplicaciones web únicas."
+>
+  <main class="px-4">
+    <SectionContainer class="py-16 md:py-36">
+      <Hero>
+      </slot>
+    </Hero>
+    </SectionContainer>
+    <div class="space-y-24">
+    <SectionContainer id="experiencia">
+      <h2
+        class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
+      >
+        <Briefcase class="size-8" />
+        Experiencia 
+      </h2>
+      <Experience />
+    </SectionContainer>
 
-	</main>
+    <SectionContainer id="proyectos">
+      <h2
+        class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
+      >
+        <CodeIcon class="size-7" />
+        Proyectos
+      </h2>
+      <Projects />
+    </SectionContainer>
+
+    <SectionContainer id="sobre-mi">
+      <h2
+        class="flex items-center mb-6 text-3xl font-semibold gap-x-8 text-black/80 dark:text-white"
+      >
+        <ProfileCheck class="size-8" />
+        Sobre mí
+      </h2>
+      <AboutMe />
+    </SectionContainer>
+  </div>
+  </main>
 </Layout>
-
