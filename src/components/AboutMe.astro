@@ -1,32 +1,39 @@
 ---
- const personalImageAlt = "Renzo Barcos"
+ import CardParallax from './CardParallax.astro'
+
 ---
+
 
 <article class="flex flex-col items-center justify-center gap-8 text-gray-700 dark:text-gray-300 md:flex-row">
   <div
     class="[&>p]:mb-4 [&>p>strong]:text-yellow-500 dark:[&>p>strong]:text-yellow-100 [&>p>strong]:font-normal [&>p>strong]:font-mono text-pretty order-2 md:order-1"
   >
     <p>
-      Mi viaje comenzó alrededor de los 12 años, cuando ingresé a una escuela técnica y me sumergí en el emocionante universo de la tecnología. Allí,<strong> aprendí los fundamentos de la informática y exploré diferentes lenguajes de programación</strong>. Además participé en proyectos que desafiaron mi creatividad y habilidades técnicas.
+      Mi viaje comenzó a los 12 años, cuando ingresé a una escuela técnica y me sumergí en el universo de la tecnología. Allí,<strong> aprendí los fundamentos de la informática y exploré diferentes lenguajes de programación
+        </strong>. Además participé en proyectos que desafiaron mi creatividad y habilidades técnicas.
     </p>
 
     <p>
       Graduarme marcó el inicio de <strong
-        >mi trayecto en el desarrollo de software.</strong
-      > La sólida base que obtuve durante esos años formativos ha sido la plataforma donde construí mi carrera en el emocionante y siempre evolutivo campo de la 
+        >mi trayectoria en el desarrollo de software.</strong
+      > La sólida base que obtuve durante esos años formativos me permitio construir mi carrera en el emocionante y siempre evolutivo campo de la 
       programación.
     </p>
 
     <p>
-      Cada línea de código que escribo hoy tiene sus raíces en aquellos días en la escuela técnica, pero mi aprendizaje no se limitó a aquellas aulas. He sido un ávido autodidacta, especialmente en lenguajes clásicos como <strong
+      Cada línea de código que escribo hoy tiene sus raíces en esos días de escuela técnica, pero mi aprendizaje no se limitó a aquellas aulas. He sido un ávido autodidacta, especialmente en lenguajes clásicos como <strong
         >JavaScript.</strong
-      >Actualmente, me encuentro cursando la Licenciatura en la Universidad Nacional de Quilmes, pero siempre que sea posible, también aplico 
+      >Actualmente, me encuentro cursando la Licenciatura en la Universidad Nacional de Quilmes, pero siempre que sea posible, aplico 
       mi pasión por desarrollar con <strong
       > bibliotecas y frameworks modernos de JavaScript, como React.js y Astro.</strong>
     </p>
   </div>
 
-  <img width="200" height="200" src="/renzo-img me.webp" alt={personalImageAlt} class="order-1 object-cover w-64 h-full p-1 bg-white md:order-2 rotate-3 lg:p-2 lg:w-64 aspect-square rounded-2xl dark:bg-yellow-500/5 ring-1 ring-white/20 " style="object-position: 50% 50%">
+    <CardParallax ></CardParallax>
+     
+
+
+  
 
 </article>
 
