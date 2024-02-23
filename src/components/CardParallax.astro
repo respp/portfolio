@@ -1,67 +1,69 @@
 ---
- const personalImageAlt = "Renzo Barcos"
-
-
+const personalImageAlt = "Renzo Barcos";
 ---
-<img width="200" height="200" src="/renzo-img me.webp" alt={personalImageAlt} class="order-1 object-cover w-64 h-full p-1 bg-white md:order-2 rotate-3 lg:p-2 lg:w-64 aspect-square rounded-2xl dark:bg-yellow-500/5 ring-1 ring-white/20" style="object-position: 50% 50%" id="image">
 
+<img
+  width="200"
+  height="200"
+  src="/renzo-img me.webp"
+  alt={personalImageAlt}
+  class="order-1 object-cover w-64 h-full p-1 bg-white md:order-2 rotate-3 lg:p-2 lg:w-64 aspect-square rounded-2xl dark:bg-yellow-500/5 ring-1 ring-white/20"
+  style="object-position: 50% 50%"
+  id="image"
+/>
 
 <style>
-    :root {
-        --box-shadow-hover: 0px 0px 20px rgba(0, 0, 0, .5);
-        --transform-perspective: 500px;
-        --transform-scale-hover: 1.01;
-        --transform-rotate-hover: 10deg;
-    }
+  :root {
+    --box-shadow-hover: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    --transform-perspective: 500px;
+    --transform-scale-hover: 1.01;
+    --transform-rotate-hover: 10deg;
+  }
 
-    #image {
-    transition: box-shadow 0.1s, transform .1s;
+  #image {
+    transition:
+      box-shadow 0.1s,
+      transform 0.5s ease-in-out;
     backface-visibility: hidden;
-    }
+  }
 
+  #image:hover {
+    box-shadow: var(--box-shadow-hover);
+    transform: perspective(var(--transform-perspective)) scale(var(--transform-scale-hover)) rotateX(5deg) rotateY(5deg);
+  }
+</style>
 
-    #image:hover {
-        box-shadow: var(--box-shadow-hover);
-    }
-  </style>
+<script is:inline>
+  const el = document.getElementById("image");
+  const height = el.clientHeight;
+  const width = el.clientWidth;
 
-  <script is:inline>
-    const el = document.getElementById("image");
-    const height = el.clientHeight
-    const width = el.clientWidth
-
-    el.addEventListener('mousemove', (evt) =>{
-    const {layerX, layerY} = evt
+  el.addEventListener("mousemove", (evt) => {
+    const { layerX, layerY } = evt;
 
     // Calcular rotaciones
-    const yRotation = (
-    (layerX - width / 2) / width ) * 20
+    const yRotation = ((layerX - width / 2) / width) * 10;
 
-    const xRotation = (
-    (layerY - height / 2) /height ) * 20
+    const xRotation = ((layerY - height / 2) / height) * 10;
 
     // Crear string de transformación
-    const transformString  = `
+    const transformString = `
             perspective(var(--transform-perspective))
             scale(var(--transform-scale-hover))
             rotateX(${xRotation}deg)
             rotateY(${yRotation}deg)
         `;
-    el.style.transition = 'transform 0.5s';
-    el.style.transform = transformString  
+    el.style.transition = "transform 0.5s";
+    el.style.transform = transformString;
+  });
 
-    })
-
-    el.addEventListener('mouseleave', () =>{
-    el.style.transition = 'transform 0.2s';
+  el.addEventListener("mouseleave", () => {
+    el.style.transition = "transform 0.5s ease-in-out";
     el.style.transform = `
     perspective(var(--transform-perspective)) 
     scale(1) 
     rotateX(0) 
     rotateY(0)
-    ` 
-
-    })
-
-  </script>
-
+    `;
+  });
+</script>
