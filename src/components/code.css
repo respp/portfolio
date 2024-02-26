@@ -1,0 +1,30 @@
+@keyframes sticky-parallax-header-move-and-size {
+	from {
+		background-position: 50% 0;
+		height: 100vh;
+		font-size: calc(4vw + 1em);
+	}
+	to {
+		background-position: 50% 100%;
+		background-color: #0b1584;
+		height: 10vh;
+		font-size: 2em;
+	}
+}
+
+#sticky-parallax-header {
+	position: fixed;
+	top: 0;
+
+	animation: sticky-parallax-header-move-and-size linear forwards;
+	animation-timeline: scroll();
+	animation-range: 0vh 90vh;
+}
+
+body {
+	padding-top: 100vh;
+}
+/* 
+La portada comienza con una altura de 100vh y se reduce a 10vh a medida que desplazas el "root scroller" (el área principal de desplazamiento). Esto se logra a lo largo de una distancia de desplazamiento de 90vh, establecida mediante la propiedad animation-range.
+
+Es importante destacar que no se puede utilizar position: sticky aquí, ya que cambiar la altura de la portada reduciría la altura completa del documento, afectando así la distancia de desplazamiento disponible. En su lugar, la portada se posiciona utilizando position: fixed. Para contrarrestar el salto del contenido hacia arriba como respuesta, se agrega un margin-top de 100vh al cuerpo del documento. */
