@@ -1,30 +1,46 @@
-@keyframes sticky-parallax-header-move-and-size {
-	from {
-		background-position: 50% 0;
-		height: 100vh;
-		font-size: calc(4vw + 1em);
-	}
+@keyframes move {
 	to {
-		background-position: 50% 100%;
-		background-color: #0b1584;
-		height: 10vh;
-		font-size: 2em;
+		/* Mover horizontalmente para que el borde derecho se alinee con el viewport */
+		transform: translateX(calc(-100% + 100vw));
 	}
 }
 
-#sticky-parallax-header {
-	position: fixed;
+#sectionPin {
+	/* Estirarlo para crear espacio para la animación de desplazamiento horizontal */
+	height: 500vh;
+	overflow: visible; /* Para que funcione position: sticky ... */
+
+	view-timeline-name: --section-pin-tl;
+	view-timeline-axis: block;
+}
+
+.pin-wrap-sticky {
+	/* Fijar en la parte superior */
+	height: 100vh;
+	width: 100vw;
+	position: sticky;
 	top: 0;
 
-	animation: sticky-parallax-header-move-and-size linear forwards;
-	animation-timeline: scroll();
-	animation-range: 0vh 90vh;
+	width: 100vw;
+	overflow-x: hidden;
 }
 
-body {
-	padding-top: 100vh;
-}
-/* 
-La portada comienza con una altura de 100vh y se reduce a 10vh a medida que desplazas el "root scroller" (el área principal de desplazamiento). Esto se logra a lo largo de una distancia de desplazamiento de 90vh, establecida mediante la propiedad animation-range.
+.pin-wrap {
+	height: 100vh;
+	width: 250vmax;
 
-Es importante destacar que no se puede utilizar position: sticky aquí, ya que cambiar la altura de la portada reduciría la altura completa del documento, afectando así la distancia de desplazamiento disponible. En su lugar, la portada se posiciona utilizando position: fixed. Para contrarrestar el salto del contenido hacia arriba como respuesta, se agrega un margin-top de 100vh al cuerpo del documento. */
+	/* Preparar para la animación */
+	will-change: transform;
+	animation: linear move forwards;
+
+	/* Vincular la animación a view-timeline */
+	animation-timeline: --section-pin-tl;
+	animation-range: contain 0% contain 100%;
+}
+
+/* Al estirar #sectionPin a una altura de 500vh, se crea más espacio de desplazamiento. Se adjunta un ViewTimeline a ese elemento, rastreándolo mientras cruza el puerto de desplazamiento.
+
+El elemento intermedio .pin-wrap-sticky se fija, y es el .pin-wrap el que se anima en el ViewTimeline.
+
+La posición inicial de la franja horizontal .pin-wrap es en 0,0 dentro de su contenedor. Su posición final es una traslación horizontal del -100%, a la cual se suma el ancho del viewport. Si no se tuviera en cuenta el ancho del viewport, el elemento estaría completamente fuera de la vista. */
+
