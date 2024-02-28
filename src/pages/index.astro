@@ -8,6 +8,8 @@ import Experience from "../components/Experience.astro"
 import ProfileCheck from "../components/icons/ProfileCheck.astro"
 import Page from '../components/icons/Page.astro'
 import Projects from "../components/Projects.astro"
+import Technologies from "../components/Technologies.astro"
+import Techs from "../components/icons/Techs.astro"
 import SectionContainer from "../components/SectionContainer.astro"
 import Hero from "../components/Hero.astro"
 import Resume from "../components/Resume.astro"
@@ -26,43 +28,54 @@ import Resume from "../components/Resume.astro"
     <div class="space-y-24">
     <SectionContainer id="experiencia">
       <h2
-        class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
+        class="flex items-center mb-6 text-3xl font-semibold gap-x-7 text-black/80 dark:text-white"
       >
         <Briefcase class="size-8" />
         Experiencia 
       </h2>
       <Experience />
     </SectionContainer>
-
-    <SectionContainer id="proyectos">
-      <h2
-        class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
-      >
-        <CodeIcon class="size-7" />
-        Proyectos
+      </div>
+      <SectionContainer id="proyectos">
+        <h2
+          class="flex items-center mb-6 text-3xl font-semibold gap-x-8 text-black/80 dark:text-white"
+        >
+          <CodeIcon class="size-7" />
+          Proyectos
+        </h2>
+        <Projects />
+      </SectionContainer>
+      <SectionContainer id="tecnologias">
+        <h2
+          class="flex items-center mb-6 text-3xl font-semibold gap-x-7 text-black/80 dark:text-white"
+        >
+          <Techs class="size-8" />
+          Tecnologías
+        </h2>
+        <Technologies />
+      </SectionContainer>
+  
+      <SectionContainer id="sobre-mi">
+        <h2
+          class="flex items-center mb-6 text-3xl font-semibold gap-x-8 text-black/80 dark:text-white"
+        >
+        <ProfileCheck class="size-8" />
+        Sobre mí
       </h2>
-      <Projects />
+      <AboutMe />
     </SectionContainer>
-
-    <SectionContainer id="sobre-mi">
+    
+      <SectionContainer id="resume">
       <h2
         class="flex items-center mb-6 text-3xl font-semibold gap-x-8 text-black/80 dark:text-white"
       >
-      <ProfileCheck class="size-8" />
-      Sobre mí
-    </h2>
-    <AboutMe />
-  </SectionContainer>
-  
-    <SectionContainer id="resume">
-    <h2
-      class="flex items-center mb-6 text-3xl font-semibold gap-x-8 text-black/80 dark:text-white"
-    >
-    <Page class="size-6"/>
-    Currículum
-    </h2>
-    <Resume />
-    </SectionContainer>
+      <Page class="size-6"/>
+      Currículum
+      </h2>
+      <Resume />
+      </SectionContainer>
+
   </div>
   </main>
 </Layout>
+
