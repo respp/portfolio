@@ -49,7 +49,7 @@ const PROJECTS = [
   {
     PROJECTS.map(({ image, title, description, tags, link, github }) => (
       <div class="card dark:bg-yellow-500/5  rounded-2xl ring-1 ring-white/20 ">
-      <article class="p rounded-2xl p-2 m-1  space-x-0 space-y-8 group md:space-x-8 md:space-y-0 bg-slate-300 mx-auto"> 
+      <article class="rounded-2xl p-2 m-1  space-x-0 space-y-8 group   bg-slate-300"> 
             <div class="w-full lg:w-full xl:w-full ">
               <div class="relative items-center transition duration-500 ease-in-out  overflow-clip rounded-xl container">
                 <img alt="ALT DEL PROYECTO" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-100" loading="lazy" src={image} />
@@ -124,7 +124,7 @@ const PROJECTS = [
     animation-range: entry 100% cover 175%;
   }
 
-  .p{
+  article{
     max-width: 1100px;
     max-height: 850px;
   }
