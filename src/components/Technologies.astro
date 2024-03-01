@@ -25,7 +25,7 @@ import Apache from './icons/Apache.astro'
 
 ---
 
-<section class="grid lg:grid-cols-2 lg:grid-rows-2 gap-6 lg:place-content-center">
+<section class="grid lg:grid-cols-2 lg:grid-rows-2 gap-6 lg:place-content-center relative mt-6 mx-auto">
 
     <article class="relative rounded-2xl p-6 ring-1 ring-white/20 bg-gradient-to-r  dark:from-dark-950 dark:to-black shadow-2xl overflow-hidden false dark:bg-[#bdbdbd0e] ">
     <div class="pointer-events-none absolute -inset-px opacity-0 transition duration-300" style="opacity: 0; background: radial-gradient(600px at 342px 13.0156px, rgba(255, 182, 255, 0.1), transparent 40%);"></div>
@@ -44,7 +44,7 @@ import Apache from './icons/Apache.astro'
             <span class="transition-colors duration-300 ease-in-out group-hover:text-blue-500" >CSS</span>   
         </li>
         <li class=" rounded-2xl  group flex flex-col fle justify-center items-center border-2 border-transparent hover:border-[#F7DF1E] pb-1">
-            <Js class="size-16 group-hover:text-[#F7DF1E]"/>    
+            <Js class="size-16 group-hover:text-[#F7DF1E] "/>    
             
             
             <span class="transition-colors duration-300 ease-in-out group-hover:text-[#F7DF1E]" >JavaScript</span>   
@@ -116,11 +116,11 @@ import Apache from './icons/Apache.astro'
             <div class="pointer-events-none absolute -inset-px opacity-0 transition duration-300" style="opacity: 0; background: radial-gradient(600px at 342px 13.0156px, rgba(255, 182, 255, 0.1), transparent 40%);"></div>
             <h3 class="text-center mb-8 text-3xl font-bold  lg:text-4xl lg:break-words bg-gradient-to-t from-[#54fbff] to-[#00a4c9] dark:from-[#c9fffe] dark:to-[#00cfef] bg-clip-text  text-transparent ">Aprendiendo</h3>
             <ul class="grid grid-cols-3 gap-4 ">
-                <li class=" rounded-2xl  group flex flex-col fle justify-center items-center border-2 border-transparent hover:border-[#292929]">
-                <NextJS class="size-16 group-hover:text-[#292929]"/>    
+                <li class=" rounded-2xl  group flex flex-col fle justify-center items-center border-2 border-transparent hover:border-[#000000]">
+                <NextJS class="size-16 group-hover:text-[#000000]"/>    
                 
                 
-                <span class="transition-colors duration-300 ease-in-out group-hover:text-[#292929]" >NextJS</span>   
+                <span class="transition-colors duration-300 ease-in-out group-hover:text-[#000000]" >NextJS</span>   
                 </li>
                 <li class=" rounded-2xl  group flex flex-col fle justify-center items-center border-2 border-transparent hover:border-[#306998]">
                     <Python class="size-16 group-hover:text-[#306998]"/>    
@@ -185,10 +185,13 @@ import Apache from './icons/Apache.astro'
 
 ul li {
   transition: transform 0.3s, border-color .4s ;
+
 }
 
 ul li:hover {
   transform: scale(1.1);
+  background-color: rgba(94, 94, 222, 0.183);
+  box-shadow: 0 0 10px rgb(158, 160, 229);
 }
 ul li svg {
   transition: transform 0.3s, color 0.3s; 

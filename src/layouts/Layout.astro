@@ -25,7 +25,13 @@ const { description, title } = Astro.props
     <ViewTransitions />
   </head>
 
-  <body class="bg-deepBlue">
+  <body class="scrollbar scrollbar-thumb-indigo-700 bg-deepBlue ">
+
+    <!-- scrollbar-thumb-blue-800 
+    scrollbar-thumb-light3
+  -->
+
+   
     <div class="light1 bg-light1 fixed"></div>
     <div class="light2 bg-light2 fixed"></div>
     <div class="light3 bg-light3 fixed"></div>
@@ -91,6 +97,7 @@ const { description, title } = Astro.props
         bottom: 0; /* Posición abajo */
         right: 0; /* Posición a la derecha */
       }
+
 
       @media (prefers-reduced-motion: reduce) {
         html {

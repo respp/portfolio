@@ -25,7 +25,7 @@ import Resume from "../components/Resume.astro"
       </slot>
     </Hero>
     </SectionContainer>
-    <div class="space-y-24">
+    <div class="space-y-24 pb-16 md:pb-36">
     <SectionContainer id="experiencia">
       <h2
         class="flex items-center mb-6 text-3xl font-semibold gap-x-7 text-black/80 dark:text-white"
@@ -36,6 +36,7 @@ import Resume from "../components/Resume.astro"
       <Experience />
     </SectionContainer>
       </div>
+      <div class="pb-14">
       <SectionContainer id="proyectos">
         <h2
           class="flex items-center mb-6 text-3xl font-semibold gap-x-8 text-black/80 dark:text-white"
@@ -45,6 +46,8 @@ import Resume from "../components/Resume.astro"
         </h2>
         <Projects />
       </SectionContainer>
+    </div>
+    <div class="pb-16 md:pb-36">
       <SectionContainer id="tecnologias">
         <h2
           class="flex items-center mb-6 text-3xl font-semibold gap-x-7 text-black/80 dark:text-white"
@@ -54,6 +57,8 @@ import Resume from "../components/Resume.astro"
         </h2>
         <Technologies />
       </SectionContainer>
+      </div>
+      <div class="pb-16 md:pb-32">
   
       <SectionContainer id="sobre-mi">
         <h2
@@ -64,6 +69,7 @@ import Resume from "../components/Resume.astro"
       </h2>
       <AboutMe />
     </SectionContainer>
+    </div>
     
       <SectionContainer id="resume">
       <h2
@@ -78,4 +84,3 @@ import Resume from "../components/Resume.astro"
   </div>
   </main>
 </Layout>
-
