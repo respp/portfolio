@@ -13,7 +13,7 @@ const TAGS = {
   },
   TAILWIND: {
     name: "Tailwind CSS",
-    class: "bg-[#003159] text-white",
+    class: "bg-[#38B2AC] text-white",
     icon: Tailwind,
   },
 }
@@ -49,7 +49,7 @@ const PROJECTS = [
   {
     PROJECTS.map(({ image, title, description, tags, link, github }) => (
       <div class="card dark:bg-yellow-500/5  rounded-2xl ring-1 ring-white/20 ">
-      <article class="rounded-2xl p-2 m-1  space-x-0 space-y-8 group   bg-slate-300"> 
+      <article class="rounded-2xl p-2 m-1  space-x-0 space-y-2 group bg-[#c4c2c2]"> 
             <div class="w-full lg:w-full xl:w-full ">
               <div class="relative items-center transition duration-500 ease-in-out  overflow-clip rounded-xl container">
                 <img alt="ALT DEL PROYECTO" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-100" loading="lazy" src={image} />
@@ -58,25 +58,25 @@ const PROJECTS = [
             </div>
           
             <div class="p-2 text-center">
-              <h3 class="text-2xl font-bold text-red-800 dark:text-gray-100">
+              <h3 class="text-2xl font-bold underline dark:text-gray-100">
                 {title}
               </h3>
               <div class="flex flex-wrap mt-2 justify-center ">
-                <ul class="flex flex-row mb-2  gap-x-2">
+                <ul class="flex flex-row   gap-x-2">
                     {tags.map((tag) => (
                       <li>
                         <span
-                          class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+                          class={`flex gap-x-2 rounded-full text-sm ${tag.class} py-1 px-2 flex items-center`}
                         >
-                          <tag.icon class="size-4" />
+                          <tag.icon class="size-5" />
                           {tag.name}
                         </span>
                       </li>
                     ))}
                   </ul>
           
-                <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
-                <footer class="flex items-end justify-start mt-4 gap-x-4">
+                <div class="mt-2 text-[#303030] dark:text-[#303030]">{description}</div>
+                <footer class="flex items-end justify-start mt-2 gap-x-4">
                     {github && (
                       <LinkButton href={github}>
                         <GitHub class="size-6" />
