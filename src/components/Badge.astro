@@ -8,10 +8,29 @@
       </div>
     </span>
     </div> -->
-
-
-<div class="text-[#65db74] bg-[#305c1955] border border-solid border-[#65db74] rounded-full py-1 px-3 text-sm inline-block">
-
-    <slot /> 
-
+<div
+  class="available text-white bg-available border border-solid border-skyBlue rounded-full py-1 px-3 text-sm inline-block"
+>
+  <slot />
 </div>
+<style>
+  .available {
+    position: relative;
+    transition: transform 1s;
+    border: solid 3px transparent; /* Define un borde transparente para mantener el espacio para el gradiente */
+    background-image: linear-gradient(
+        rgb(255, 255, 255),
+        rgba(255, 255, 255, 0)
+      ),
+      linear-gradient(to right, rgb(255, 127, 251), rgb(122, 200, 255));
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    box-shadow: 0 0 0 3px transparent; /* Se usa para mantener el espacio del borde antes del hover */
+  }
+  /*  ARREGLAR FONDO A TRANSPARENTE */
+  .available:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 8px 3px rgba(161, 93, 255, 0.631); /* Aumenta el desenfoque para más suavidad */
+    border-color: transparent; /* Mantiene el borde transparente en hover */
+  }
+</style>
