@@ -1,0 +1,22 @@
+---
+import Download from './icons/Download.astro';
+import LinkButton from './LinkButton.astro';
+
+const title = 'Renzo_Espinosa_CV',
+      url = 'https://drive.google.com/file/d/1kLTosdbQRg0hmeUBuc88FBue0d4IhnOF/view?usp=drive_link' 
+
+
+
+---
+<div
+  class="rounded-lg shadow m-4 bg-black/5 dark:bg-black/20 backdrop-blur-lg w-full mx-auto container lg:max-w-4xl md:max-w-2xl mb-10 flex justify-center"
+>
+
+<LinkButton download={title} href={url}>
+  <Download class="size-6" />
+  Download CV
+  
+</LinkButton>
+    
+</div>
+

@@ -1,5 +1,6 @@
 ---
 const personalImageAlt = "Renzo Espinosa"
+const borderImageAlt = "Border Image"
 import Badge from "./Badge.astro"
 import LinkedInIcon from './icons/LinkedIn.astro'
 import MailIcon from "./icons/Mail.astro"
@@ -8,35 +9,59 @@ import SocialPill from "./SocialPill.astro"
 ---
 
 <div class="max-w-xl">
-  <div class="flex gap-4 mb-4">
-    <img
-      class="rounded-full shadow-lg size-16"
-      src="/renzo.webp"
-      alt={personalImageAlt}
-    />
+  <div class="flex gap-4 ">
+    <div class="superponer relative">
+      <img
+        class="img-1 rounded-full shadow-lg absolute top-0 left-0 w-full h-full transform scale-90"
+        src="/renzo.webp"
+        alt={personalImageAlt}
+      />
+
+      <!-- RECORDAR FORMATEAR A WEBP LAS IMAGENES PARA QUE PESE MENOS -->
+      <img
+        class="img-2 rounded full absolute w-full h-full mix-blend-mode-overlay transform scale-105"
+        src="/border-img.png"
+        alt={borderImageAlt}
+      />
+
+      <img
+        class="img-2 rounded full absolute w-full h-full mix-blend-mode-overlay transform scale-105"
+        src="/border-img.png"
+        alt={borderImageAlt}
+      />
+
+    </div>
     <a
       href="https://linkedin.com/in/renzo-espinosa-barcos"
       target="_blank"
       rel="noopener"
-      class="flex items-center transition md:justify-center md:hover:scale-105"
+      class="flex items-center transition md:justify-center md:hover:scale-105 mt-12 ml-8"
     >
       <Badge>Disponible para trabajar</Badge>
     </a>
   </div>
+
   <h1
     class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
   >
     Soy Renzo Barcos
   </h1>
   <p
-    class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300"
+    class="mt-6 text-xl text-gray-80 dark:text-gray-300"
   >
-    <strong
+
+  <h3 class="text-center mb-8 text-3xl font-bold  lg:text-4xl lg:break-words"></h3>
+    <strong class=' bg-gradient-to-t from-[#54a7ff] to-[#2d43b3] dark:from-[#8c9adf] dark:to-[#2329d1] bg-clip-text  text-transparent break-words text-xl font-extrabold'
       >Frontend Dev y Técnico en Programación</strong
     > de Buenos Aires, Argentina 🇦🇷. Dedicado a desarrollar aplicaciones web únicas. 
   </p>
     
-    <p class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300">Escribime en: renzoespinosa.b@gmail.com</p>
+    <p class="mt-6 text-xl text-gray-800 dark:text-gray-300"> Escribime en: 
+      <strong class=' bg-gradient-to-t from-[#54a7ff] to-[#2d43b3] dark:from-[#8c9adf] dark:to-[#2329d1] bg-clip-text text-transparent break-words text-xl font-bold'
+      >renzoespinosa.b@gmail.com
+      </strong>
+       </p>
+        
 
   
 
@@ -55,3 +80,27 @@ import SocialPill from "./SocialPill.astro"
     </SocialPill>
   </nav>
 </div>
+
+<style>
+  .mix-blend-mode-overlay {
+    mix-blend-mode: overlay;
+  }
+
+  .superponer {
+    width: 13vh; 
+    height: 13vh;
+    margin-bottom: 1rem;
+  }
+  
+  .superponer img {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .img-2{
+  filter: brightness(1.5); 
+  }
+
+
+</style>

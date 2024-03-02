@@ -25,15 +25,18 @@ const { description, title } = Astro.props
     <ViewTransitions />
   </head>
 
-  <body class="relative text-black dark:text-white">
-    <div
-      class="absolute top-0 bottom-0 z-[-2] min-h-screen w-full bg-gray-50 dark:bg-gray-950
-      bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(217,216,255,0.5),rgba(255,255,255,0.9))]
-      dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
-    >
-    </div>
-<!-- 
-    <div class="relative h-full w-full bg-slate-950"><div class="absolute bottom-0 left-[-20%] right-0 top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.15),rgba(255,255,255,0))]"></div><div class="absolute bottom-0 right-[-20%] top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.15),rgba(255,255,255,0))]"></div></div> -->
+  <body class="scrollbar scrollbar-thumb-indigo-700 bg-deepBlue ">
+
+    <!-- scrollbar-thumb-blue-800 
+    scrollbar-thumb-light3
+  -->
+
+   
+    <div class="light1 bg-light1 fixed"></div>
+    <div class="light2 bg-light2 fixed"></div>
+    <div class="light3 bg-light3 fixed"></div>
+
+
 
     <Header />
     <slot />
@@ -54,7 +57,47 @@ const { description, title } = Astro.props
         flex-direction: column;
         min-height: 100vh;
         overscroll-behavior: none;
+        scrollbar-color: blue green;
+
       }
+
+      .light1 {
+        width: 500px;
+        height: 500px;
+        border-radius: 100%;
+        filter: blur(157px);
+        display: flex;
+        justify-content: flex-start;
+        z-index: -1;
+        top: 0; /* Posición arriba */
+        left: 0; /* Posición a la izquierda */
+      }
+
+      .light2 {
+        width: 70px;
+        height: 70px;
+        border-radius: 100%;
+        filter: blur(110px);
+        display: flex;
+        justify-content: flex-start;
+        z-index: -1;
+        top: 200px; /* Posición arriba */
+        left: 350px; /* Posición a la izquierda */
+        opacity: 1;
+      }
+
+      .light3 {
+        width: 420px;
+        height: 420px;
+        border-radius: 100%;
+        filter: blur(150px);
+        display: flex;
+        justify-content: flex-end;
+        z-index: -1;
+        bottom: 0; /* Posición abajo */
+        right: 0; /* Posición a la derecha */
+      }
+
 
       @media (prefers-reduced-motion: reduce) {
         html {
