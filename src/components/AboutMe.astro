@@ -1,5 +1,10 @@
 ---
- import CardParallax from './CardParallax.astro'
+import CardParallax from './CardParallax.astro'
+import Resume from './Resume.astro'
+import Download from './icons/Download.astro';
+import SocialPill from './SocialPill.astro';
+const title = 'Renzo_Espinosa_CV',
+      url = 'https://drive.google.com/file/d/1kLTosdbQRg0hmeUBuc88FBue0d4IhnOF/view?usp=drive_link' 
 
 ---
 
@@ -30,10 +35,20 @@
   </div>
 
     <CardParallax ></CardParallax>
-     
+
+    
+    
+    
+    
+    
+  </article>
 
 
-  
+<div  class="mt-10 container lg:max-w-4xl md:max-w-2xl mb-5 flex justify-center">
 
-</article>
+  <SocialPill href={url}>
+    <Download class="size-4" />
+    Download CV
+  </SocialPill>
 
+</div>

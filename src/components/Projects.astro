@@ -3,7 +3,12 @@ import GitHub from "./icons/GitHub.astro"
 import NextJS from "./icons/NextJS.astro"
 import Tailwind from "./icons/Tailwind.astro"
 import Link from "./icons/Link.astro"
+import React from "./icons/React.astro"
+import Ts from "./icons/Ts.astro"
 import LinkButton from "./LinkButton.astro"
+import Css from "./icons/Css.astro"
+import MySql from "./icons/MySql.astro"
+import Php from "./icons/Php.astro"
 
 const TAGS = {
   NEXT: {
@@ -16,31 +21,56 @@ const TAGS = {
     class: "bg-[#38B2AC] text-white",
     icon: Tailwind,
   },
+  REACT: {
+    name: "React",
+    class: 'bg-[#61DAFB] text-white',
+    icon: React,
+  },
+  TYPESCRIPT: {
+    name: "Typescript",
+    class: 'bg-[#007ACC] text-white',
+    icon: Ts,
+  },
+  CSS: {
+    name: "CSS",
+    class: 'bg-blue-500 text-white',
+    icon: Css,
+  },
+  PHP: {
+    name: "PHP",
+    class: 'bg-[#8892BF] text-white',
+    icon: Php,
+  },
+  SQL: {
+    name: "MySQL",
+    class: 'bg-[#00758F] text-white',
+    icon: MySql,
+  }
 }
 const PROJECTS = [
   {
-    title: "SVGL - A beautiful library with SVG logos",
+    title: "Credit Card - Form",
     description:
-      "Biblioteca de logos SVG de las marcas más populares. +10k visitas al mes. +2K svgs descargados. Creado desde cero con Next.js, React y Tailwind CSS.",
+      "Formulario interactivo que simula el proceso de ingreso de datos de tarjetas de crédito. Presenta varias tarjetas y valida automáticamente la información según su número",
     link: "https://svgl.vercel.app/",
     github: "https://github.com/pheralb/svgl",
-    image: "/projects/4.jpg",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+    image: "/projects/creditCard.webp",
+    tags: [TAGS.REACT, TAGS.TYPESCRIPT],
   },
   {
-    title: "AdventJS - Retos de programación con JavaScript y TypeScript",
+    title: "WarrrenBank - Billetera Virtual No Country",
     description:
-      "Plataforma gratuita con retos de programación. Más de 1 millón de visitas en un mes. +50K retos completados. Creada desde cero con Next.js, React y Tailwind CSS.",
+      "Billetera virtual desarrollada en colaboración con la agrupación de experiencia No Country",
     link: "https://adventjs.dev",
-    image: "./projects/2.jpg",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+    image: "./projects/WarrenBank.webp",
+    tags: [TAGS.REACT, TAGS.CSS],
   },
   {
-    title: "AdventJS - Retos de programación con JavaScript y TypeScript",
+    title: "Gelatto - CRUD y Sesiones",
     description:
-      "Plataforma gratuita con retos de programación. Más de 1 millón de visitas en un mes. +50K retos completados. Creada desde cero con Next.js, React y Tailwind CSS.",
-    image: "./projects/2.jpg",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+      "Actividad realizada para la materia de Implementación de Web Dinámicas,7mo Programación",
+    image: "./projects/Gelatto.webp",
+    tags: [TAGS.PHP, TAGS.SQL, TAGS.CSS],
   },
 ]
 ---
@@ -49,10 +79,10 @@ const PROJECTS = [
   {
     PROJECTS.map(({ image, title, description, tags, link, github }) => (
       <div class="card dark:bg-yellow-500/5  rounded-2xl ring-1 ring-white/20 ">
-      <article class="rounded-2xl p-2 m-1  space-x-0 space-y-2 group bg-[#c4c2c2]"> 
+      <article class="rounded-2xl p-2 m-1  space-x-0 space-y-2 group bg-[#35363A]"> 
             <div class="w-full lg:w-full xl:w-full ">
               <div class="relative items-center transition duration-500 ease-in-out  overflow-clip rounded-xl container">
-                <img alt="ALT DEL PROYECTO" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-100" loading="lazy" src={image} />
+                <img alt="Imagen del Proyecto" class="object-cover object-top w-full h-38 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-100" loading="lazy" src={image} />
                 <div class="shadow"></div>
               </div>
             </div>
@@ -75,7 +105,7 @@ const PROJECTS = [
                     ))}
                   </ul>
           
-                <div class="mt-2 text-[#303030] dark:text-[#303030]">{description}</div>
+                <div class="mt-2 text-[#ffffff] dark:text-[#ffffff]">{description}</div>
                 <footer class="flex items-end justify-start mt-2 gap-x-4">
                     {github && (
                       <LinkButton href={github}>
@@ -115,6 +145,7 @@ const PROJECTS = [
   }
   
   .card {
+    max-width: 800px;
     position: sticky;
     top: 0;
     view-timeline: --image;
@@ -125,7 +156,7 @@ const PROJECTS = [
   }
 
   article{
-    max-width: 1100px;
+    max-width: 800px;
     max-height: 850px;
   }
 
