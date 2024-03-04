@@ -1,18 +1,21 @@
 ---
 const personalImageAlt = "Renzo Barcos";
+import Finger from './icons/Finger.astro'
 ---
 
-<img
-  width="200"
-  height="200"
-  src="/renzo-img me.webp"
-  alt={personalImageAlt}
-  class="order-1 object-cover w-64 h-full p-1 bg-white md:order-2 rotate-3 lg:p-2 lg:w-64 aspect-square rounded-2xl dark:bg-yellow-500/5 ring-1 ring-white/20"
-  style="object-position: 50% 50%"
-  id="image"
-  loading="lazy"
-/>
 
+  <img
+    width="200"
+    height="200"
+    src="/renzo-img me.webp"
+    alt={personalImageAlt}
+    class="order-1 object-cover w-64 h-full p-1 bg-white md:order-2 rotate-3 lg:p-2 lg:w-64 aspect-square rounded-2xl dark:bg-yellow-500/5 ring-1 ring-white/20 relative"
+    style="object-position: 50% 50%"
+    id="image"
+    loading="lazy"
+  />
+
+  
 <style>
   :root {
     --box-shadow-hover: 0px 0px 20px rgba(0, 0, 0, 0.5);
@@ -32,6 +35,8 @@ const personalImageAlt = "Renzo Barcos";
     box-shadow: var(--box-shadow-hover);
     transform: perspective(var(--transform-perspective)) scale(var(--transform-scale-hover)) rotateX(5deg) rotateY(5deg);
   }
+
+
 </style>
 
 <script is:inline>
