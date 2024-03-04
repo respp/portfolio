@@ -6,13 +6,11 @@ import Briefcase from "../components/icons/Briefcase.astro"
 import CodeIcon from "../components/icons/Code.astro"
 import Experience from "../components/Experience.astro"
 import ProfileCheck from "../components/icons/ProfileCheck.astro"
-import Page from '../components/icons/Page.astro'
 import Projects from "../components/Projects.astro"
 import Technologies from "../components/Technologies.astro"
 import Techs from "../components/icons/Techs.astro"
 import SectionContainer from "../components/SectionContainer.astro"
 import Hero from "../components/Hero.astro"
-import Resume from "../components/Resume.astro"
 ---
 
 <Layout
@@ -20,12 +18,12 @@ import Resume from "../components/Resume.astro"
   description="Contrata a Renzo para crear tu aplicación web o móvil. Desarrollador Web y Técnico en Programación. Dedicado a desarrollar aplicaciones web únicas."
 >
   <main class="px-4">
-    <SectionContainer class="py-16 md:py-36">
+    <SectionContainer class="py-16 md:py-36" id="home">
       <Hero>
       </slot>
     </Hero>
     </SectionContainer>
-    <div class="space-y-24">
+    <div class="space-y-24 pb-16 md:pb-32">
     <SectionContainer id="experiencia">
       <h2
         class="flex items-center mb-6 text-3xl font-semibold gap-x-7 text-black/80 dark:text-white"
@@ -36,6 +34,7 @@ import Resume from "../components/Resume.astro"
       <Experience />
     </SectionContainer>
       </div>
+      <div class="pb-14">
       <SectionContainer id="proyectos">
         <h2
           class="flex items-center mb-6 text-3xl font-semibold gap-x-8 text-black/80 dark:text-white"
@@ -45,6 +44,8 @@ import Resume from "../components/Resume.astro"
         </h2>
         <Projects />
       </SectionContainer>
+    </div>
+    <div class="pb-16 md:pb-36">
       <SectionContainer id="tecnologias">
         <h2
           class="flex items-center mb-6 text-3xl font-semibold gap-x-7 text-black/80 dark:text-white"
@@ -54,6 +55,8 @@ import Resume from "../components/Resume.astro"
         </h2>
         <Technologies />
       </SectionContainer>
+      </div>
+      <div class="pb-16 md:pb-20">
   
       <SectionContainer id="sobre-mi">
         <h2
@@ -64,7 +67,8 @@ import Resume from "../components/Resume.astro"
       </h2>
       <AboutMe />
     </SectionContainer>
-    
+    </div>
+<!--     
       <SectionContainer id="resume">
       <h2
         class="flex items-center mb-6 text-3xl font-semibold gap-x-8 text-black/80 dark:text-white"
@@ -73,9 +77,8 @@ import Resume from "../components/Resume.astro"
       Currículum
       </h2>
       <Resume />
-      </SectionContainer>
+      </SectionContainer> -->
 
   </div>
   </main>
 </Layout>
-

@@ -1,4 +1,4 @@
-<div class="flex items-center ">
+<!-- <div class="flex items-center ">
     <span class="relative inline-flex overflow-hidden rounded-full p-[1px]">
       <span
         class="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#51E4B8_0%,#21554E_50%,#51E4B8_100%)]"
@@ -7,4 +7,40 @@
         <slot />
       </div>
     </span>
+    </div> -->
+<div
+  class="available text-whiteborder  rounded-full py-1 px-3 text-sm inline-block"
+>
+    <div class="body">
+      <slot />
     </div>
+</div>
+<style>
+
+  .available {
+    position: relative;
+    height:35px;
+    width: 180px;
+    transition: transform 1s;    
+    background: linear-gradient(100deg, rgba(255, 127, 251, 0.807), rgba(122, 200, 255, 0.798));
+    padding: 4px;
+    border-radius: 16px;
+}
+
+.body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background-color: #192152;
+}
+
+  /*  ARREGLAR FONDO A TRANSPARENTE */
+  .available:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 8px 3px rgba(161, 93, 255, 0.631); /* Aumenta el desenfoque para más suavidad */
+    border-color: transparent; /* Mantiene el borde transparente en hover */
+  }
+</style>
