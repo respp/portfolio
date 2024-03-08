@@ -1,6 +1,7 @@
 ---
 const personalImageAlt = "Renzo Espinosa";
 const borderImageAlt = "Border Image";
+const border = "/border-img.webp"
 import Badge from "./Badge.astro";
 import LinkedInIcon from "./icons/LinkedIn.astro";
 import MailIcon from "./icons/Mail.astro";
@@ -11,6 +12,7 @@ import SocialPill from "./SocialPill.astro";
 <div class="max-w-xl">
   <div class="flex gap-4 mb-2">
     <div class="superponer relative">
+      <div class="lightBorder bg-[#1f3184bb] dark:bg-transparent absolute"></div>
       <img
         class="img-1 rounded-full shadow-lg absolute top-0 left-0 w-full h-full transform scale-90"
         src="/renzo.webp"
@@ -20,14 +22,14 @@ import SocialPill from "./SocialPill.astro";
 
       <!-- RECORDAR FORMATEAR A WEBP LAS IMAGENES PARA QUE PESE MENOS -->
       <img
-        class="img-2 rounded full absolute w-full h-full mix-blend-mode-overlay transform scale-105"
-        src="/border-img.webp"
+        class="img-2 rounded full absolute w-full h-full mix-blend-mode-overlay transform scale-105 "
+        src={border}
         alt={borderImageAlt}
       />
 
       <img
         class="img-2 rounded full absolute w-full h-full mix-blend-mode-overlay transform scale-105"
-        src="/border-img.webp"
+        src={border}
         alt={borderImageAlt}
       />
     </div>
@@ -40,24 +42,28 @@ import SocialPill from "./SocialPill.astro";
     </a>
   </div>
 
+<div class="flex justify-content gap-10"> 
   <h1
     class="text-[36px] font-bold tracking-tight text-gray-800 sm:text-[40px] dark:text-white"
   >
     Soy Renzo Barcos
   </h1>
+  <div class="pt-3">
+    <Badge>Disponible para trabajar</Badge>
+  </div>
+  </div>
+</div>
   
-  <p class="mt-4 text-xl text-gray-80 dark:text-gray-300">
-    <h3 class="text-center mb-8 text-3xl font-bold lg:text-4xl lg:break-words">
-    </h3>
-    <strong class="text-patito break-words text-xl font-extrabold"
-      >Frontend Dev y Técnico en Programación</strong
-    > de Buenos Aires, Argentina 🇦🇷. Dedicado a desarrollar aplicaciones web únicas.
+  <p class="mt-4 text-xl text-gray-800 dark:text-gray-300">
+    
+    <strong class="dark:text-patito text-light1 break-words text-xl font-extrabold">Frontend Dev y Técnico en Programación
+      </strong> de Buenos Aires, Argentina 🇦🇷. Dedicado a desarrollar aplicaciones web únicas.
   </p>
   
 
   <p class="mt-6 text-xl text-gray-800 dark:text-gray-300">
     Escribime en:
-    <strong class="text-patito break-words text-xl font-bold"
+    <strong class="dark:text-patito text-light1 text-[#6223C1]break-words text-xl font-bold"
       >renzoespinosa.b@gmail.com
     </strong>
   </p>
@@ -79,12 +85,19 @@ import SocialPill from "./SocialPill.astro";
     </SocialPill>
   </nav>
 
-  <div class="mt-6">
-    <Badge>Disponible para trabajar</Badge>
-  </div>
-</div>
+
 
 <style>
+
+  
+.lightBorder {
+        width: 80px;
+        height: 100px;
+        border-radius: 50%;
+        filter: blur(55px);
+        z-index: -1;
+      }
+
   .mix-blend-mode-overlay {
     mix-blend-mode: overlay;
   }

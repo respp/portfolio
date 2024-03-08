@@ -1,7 +1,7 @@
 <div
-  class="available text-whiteborder  rounded-full py-1 px-3 text-sm inline-block"
+  class="available text-whiteborder  rounded-full py-1 px-3 text-sm inline-block border border-[#332bc576] dark:border-0"
 >
-    <div class="body">
+    <div class="body bg-slate-200 dark:bg-[#192152] border border-[#332bc5bc] dark:border-transparent dark:border-0 text-gray-800 dark:text-white font-bold dark:font-normal ">
       <slot />
     </div>
 </div>
@@ -24,13 +24,11 @@
   width: 100%;
   height: 100%;
   border-radius: 10px;
-  background-color: #192152;
 }
 
   .available:hover {
     transform: scale(1.1);
     box-shadow: 0 0 8px 3px rgba(96, 36, 179, 0.336); /* Aumenta el desenfoque para más suavidad */
-    border-color: transparent; /* Mantiene el borde transparente en hover */
     cursor: pointer;
   }
 </style>

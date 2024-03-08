@@ -34,7 +34,7 @@ const navItems = [
   class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto"
 >
   <nav
-    class="flex px-3 text-sm font-medium text-[#bc5050] dark:text-[#cccbcb] justify-center items-center"
+    class="flex px-3 text-sm font-medium text-light1 dark:text-[#cccbcb] justify-center items-center"
   >
     {
       navItems.map((link) => (
@@ -81,7 +81,6 @@ nav a {
   margin: 5px 0px;
   padding: 5px 0px;
   text-decoration: none;
-  color: #ffffff;
   font-size: 1rem;
   font-weight: 500;
   transition: .5s;
@@ -91,6 +90,7 @@ nav a {
   width: 10vw;
 }
 
+
 nav a:before {
   content: '';
   position: absolute;
@@ -98,8 +98,8 @@ nav a:before {
   left: 0;
   width: 100%;
   height: 100%;
-  border-top: 2px solid #263a9c4b;
-  border-bottom: 2px solid #263a9c31;
+  border-top: 2px solid #3448AF56;
+  border-bottom: 2px solid #3448AF56;
   border-radius: 2px;
   transform: scaleY(2);
   opacity: 0;
@@ -114,7 +114,7 @@ nav a:after {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #263a9c4b;
+  background-color: #3448AF56;
   /* box-shadow: 0 4px 6px #a0d7ff60; */
   transform: scale(0);
   opacity: 0;
@@ -139,7 +139,7 @@ nav a:hover:after {
 
   @keyframes nav-shadown {
     to {
-      @apply backdrop-blur bg-[#1a153171];
+      @apply backdrop-blur bg-[#2c235571];
       /*   */
     }
   }

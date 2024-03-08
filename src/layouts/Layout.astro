@@ -25,16 +25,17 @@ const { description, title } = Astro.props
     <ViewTransitions />
   </head>
 
-  <body class="scrollbar scrollbar-thumb-indigo-700 bg-deepBlue">
+  <body class="scrollbar scrollbar-thumb-gray-800 dark:scrollbar-thumb-indigo-700 bg-slate-200 dark:bg-deepBlue">
 
     <!-- scrollbar-thumb-blue-800 
     scrollbar-thumb-light3
   -->
 
    
-    <div class="light1 bg-light1 fixed"></div>
-    <div class="light2 bg-light2 fixed"></div>
-    <div class="light3 bg-light3 fixed"></div>
+    
+    <div class="light1 bg-[#44475662] dark:bg-light1 fixed"></div>
+    <div class="light2 bg-[#68dcc557] dark:bg-light2 fixed"></div>
+    <div class="light3 bg-[#6a76b38d] dark:bg-light3 fixed"></div>
 
 
 
@@ -70,6 +71,7 @@ const { description, title } = Astro.props
         top: 0; /* Posición arriba */
         left: 0; /* Posición a la izquierda */
       }
+
 
       .light2 {
         width: 70px;

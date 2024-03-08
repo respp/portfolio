@@ -1,21 +1,12 @@
-<svg
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  stroke-width="2"
-  stroke="currentColor"
-  fill="none"
-  stroke-linecap="round"
-  stroke-linejoin="round"
-  ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
-    d="M7 8l-4 4l4 4"></path><path d="M17 8l4 4l-4 4"></path><path
-    d="M14 4l-4 16"></path>
-    <style>
+<svg 
+xmlns="http://www.w3.org/2000/svg" 
+ width="44" 
+ height="44" 
+ viewBox="0 0 24 24" 
+ stroke-width="1.5" 
+ stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M0 0h24v24H0z" stroke="none"/><path d="M10 16H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v7M7 20h4M9 16v4M18 21l-2 1h-1v-3l-1-2h0l2-1 1-2h1l1 2 3 1h0l-2 2 1 3h-1l-2-1z"/>    <style>
         svg { color: #000; }
         @media (prefers-color-scheme: dark) {
             svg { color: #FFF; }
         }
-    </style>
-    </svg
->
+    </style></svg>

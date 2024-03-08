@@ -15,6 +15,7 @@ export default {
 						light2: "#15FACE",
 						light3: "#6223C1",
 						titles: '#5FACD7',
+						bglight: "#192152"
 			  }, 
 			  linearGradients: {
 				borderColor: 'linear-gradient(100deg, rgb(255, 127, 251), rgb(122,200, 255))',
