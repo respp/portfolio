@@ -1,6 +1,8 @@
 ---
 import ThemeToggle from "./ThemeToggle.astro"
 
+import hamburguerMenu from "./menu_hamburguesa.js"
+
 const navItems = [
   {
     title: "Home",
@@ -30,36 +32,61 @@ const navItems = [
 ]
 ---
 
+
 <header
   class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto"
 >
-  <nav
-    class="flex px-3 text-sm font-medium text-light1 dark:text-[#cccbcb] justify-center items-center"
+  <button
+  class="panel-btn text-xl lg:hidden mr-20"
+  aria-label="Toggle Menu"
+  onclick="{toggleMenu}"
   >
-    {
-      navItems.map((link) => (
-        <li>
-          <a
-            aria-label={link.label}
-            href={link.url}
-          >
-            {link.title}
-          </a>
-          
-        </li>
-      ))
-    }
-      <ThemeToggle />
-  </nav>
+  ☰
+</button>
+  <div class="panel ">
+    <nav
+      class="px-3 text-sm font-medium text-light1 dark:text-[#cccbcb] justify-center items-center"
+    >
+      {
+        navItems.map((link) => (
+          <li class="hidden lg:block">
+            <a
+              aria-label={link.label}
+              href={link.url}
+            >
+              {link.title}
+            </a>
+            
+          </li>
+        ))
+      }
+        <ThemeToggle />
+    </nav>
+  </div>
 </header>
 
-
 <style>
+
+  .cont1{
+    display: flex;
+    justify-content: center;
+    align-items:flex-end;
+  }
+
+
 nav {
   animation: nav-shadown 1s linear both;
   animation-timeline: scroll();
   animation-range: 0 100px;
   border-radius: 10px;
+}
+
+button{
+  animation: button-shadown 1s linear both;
+  border-radius: 200px;
+  width: 50px;
+  height: 20px;
+  margin-top: .87rem;
 }
 
 nav {
@@ -135,9 +162,24 @@ nav a:hover:after {
   transform: scaleY(1);
   opacity: 1;
 }
+
+.panel{
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transition: transform .3s ease;
+}
   
 
   @keyframes nav-shadown {
+    to {
+      @apply backdrop-blur bg-[#2c235571];
+      /*   */
+    }
+  }
+  @keyframes button-shadown {
     to {
       @apply backdrop-blur bg-[#2c235571];
       /*   */
@@ -152,9 +194,50 @@ nav a:hover:after {
   }
 }
 
+@media screen and (max-width: 1036px) {
+  nav {
+    margin-top: 200px;
+    width: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    background: #263a9c62;
+    backdrop-filter: blur(8px);
+  }
+
+  .panel{
+    position: fixed;
+    transform: translate(0,-50%);
+  }
+
+  .panel.is-active{
+    transform: translate(0,0);
+  }
+
+  li{
+    padding: 2rem;
+    width: inherit;
+    display: block;
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: all 0.3 ease;
+  }
+}
+
+
+
   @media screen and (max-width: 1420px) {
   nav a {
     width: 16vw;
   }
 }
 </style>
+
+<script is:inline>
+
+document.addEventListener("DOMContentLoaded",(e)=>{
+  hamburguerMenu('.panel-btn', '.panel')
+})
+</script>
