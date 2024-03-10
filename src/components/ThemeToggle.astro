@@ -53,6 +53,18 @@ const THEMES = ["Light", "Dark"]
       opacity: 1;
     }
   }
+
+  @media screen and (max-width: 1036px) {
+  .sr-only{
+  position: relative;  
+  width: 100%; /* Ancho deseado */
+  height: 50px;
+  }
+
+  .theme-toggle-icon{
+    transform: scale(2);
+  }
+}
 </style>
 
 <script is:inline>

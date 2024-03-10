@@ -1,8 +1,6 @@
 ---
 import ThemeToggle from "./ThemeToggle.astro"
 
-import hamburguerMenu from "./menu_hamburguesa.js"
-
 const navItems = [
   {
     title: "Home",
@@ -37,13 +35,17 @@ const navItems = [
   class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto"
 >
   <button
-  class="panel-btn text-xl lg:hidden mr-20"
+  class="panel-btn lg:hidden m-auto"
   aria-label="Toggle Menu"
-  onclick="{toggleMenu}"
+  type="button"
   >
-  ☰
+  <div class="hamburger" id="hamburger-1">
+    <span class="line"></span>
+    <span class="line"></span>
+    <span class="line"></span>
+  </div>
 </button>
-  <div class="panel ">
+  <aside class="panel ">
     <nav
       class="px-3 text-sm font-medium text-light1 dark:text-[#cccbcb] justify-center items-center"
     >
@@ -62,7 +64,7 @@ const navItems = [
       }
         <ThemeToggle />
     </nav>
-  </div>
+  </aside>
 </header>
 
 <style>
@@ -79,14 +81,6 @@ nav {
   animation-timeline: scroll();
   animation-range: 0 100px;
   border-radius: 10px;
-}
-
-button{
-  animation: button-shadown 1s linear both;
-  border-radius: 200px;
-  width: 50px;
-  height: 20px;
-  margin-top: .87rem;
 }
 
 nav {
@@ -171,6 +165,19 @@ nav a:hover:after {
   right: 0;
   transition: transform .3s ease;
 }
+
+.panel-btn{
+  z-index: 1;
+}
+
+button{
+  animation: button-shadown 1s linear both;
+  border-radius: 200px;
+  width: 100px;
+  height: 46px;
+  margin-top: .87rem;
+  font-size: x-large
+}
   
 
   @keyframes nav-shadown {
@@ -192,11 +199,9 @@ nav a:hover:after {
     padding: 0px 10px;
     width: 20vw;
   }
-}
 
-@media screen and (max-width: 1036px) {
   nav {
-    margin-top: 200px;
+    margin-top: 220px;
     width: inherit;
     display: flex;
     flex-direction: column;
@@ -209,7 +214,7 @@ nav a:hover:after {
 
   .panel{
     position: fixed;
-    transform: translate(0,-50%);
+    transform: translate(0,-100%);
   }
 
   .panel.is-active{
@@ -224,8 +229,65 @@ nav a:hover:after {
     text-decoration: none;
     transition: all 0.3 ease;
   }
+
+  li a{
+    width: 100%;
+    height: 100%;
+    display: block;
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: all 0.3 ease;
+  }
+
 }
 
+
+/* ----------------------------button---------------------- */
+
+.hamburger .line{
+  width: 50px;
+  height: 5px;
+  background-color: #ecf0f1;
+  display: block;
+  margin: 8px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.hamburger:hover{
+  cursor: pointer;
+}
+
+/* ONE */
+
+#hamburger-1.is-active .line:nth-child(2){
+  opacity: 0;
+}
+
+#hamburger-1.is-active .line:nth-child(1){
+  -webkit-transform: translateY(13px) rotate(45deg);
+  -ms-transform: translateY(13px) rotate(45deg);
+  -o-transform: translateY(13px) rotate(45deg);
+  transform: translateY(13px) rotate(45deg);
+  
+  transition: transform .3s ease;
+  background-color: #6e6e6e;
+}
+
+#hamburger-1.is-active .line:nth-child(3){
+  -webkit-transform: translateY(-13px) rotate(-45deg);
+  -ms-transform: translateY(-13px) rotate(-45deg);
+  -o-transform: translateY(-13px) rotate(-45deg);
+  transform: translateY(-13px) rotate(-45deg);
+
+  
+  background-color: #6e6e6e;
+  transition: transform .3s ease;
+}
+
+
+/* ----------------------------------------------------------- */
 
 
   @media screen and (max-width: 1420px) {
@@ -236,8 +298,28 @@ nav a:hover:after {
 </style>
 
 <script is:inline>
+  const d = document;
 
-document.addEventListener("DOMContentLoaded",(e)=>{
-  hamburguerMenu('.panel-btn', '.panel')
+function hamburgerMenu(panelBtn, panel, panelLink, hamburger){
+
+    d.addEventListener('click', (e)=>{
+        if (e.target.matches(panelBtn) || e.target.matches(`${panelBtn} *`)){
+            d.querySelector(panel).classList.toggle('is-active')
+            d.querySelector(panelBtn).classList.toggle('is-active')
+        }
+        if (e.target.matches(panelLink)){
+            d.querySelector(panel).classList.remove('is-active')
+            d.querySelector(panelBtn).classList.remove('is-active')
+            d.querySelector(hamburger).classList.remove('is-active')
+        }
+    })
+}
+
+d.addEventListener("DOMContentLoaded",()=>{
+    hamburgerMenu('.panel-btn', '.panel', 'li a', '.hamburger')
+    const hamburger = document.querySelector('.hamburger');
+    hamburger.addEventListener("click", function() {
+    this.classList.toggle("is-active");
+  });
 })
 </script>
