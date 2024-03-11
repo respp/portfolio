@@ -1,7 +1,7 @@
 ---
 import ThemeToggle from "./ThemeToggle.astro"
 
-const navItems = [
+const menuItems = [
   {
     title: "Home",
     label: "home",
@@ -46,11 +46,11 @@ const navItems = [
   </div>
 </button>
   <aside class="panel mx-auto">
-    <nav
+    <menu
       class="px-3 text-sm font-medium text-light1 dark:text-[#cccbcb] justify-center items-center"
     >
       {
-        navItems.map((link) => (
+        menuItems.map((link) => (
           <li class="hidden lg:block mx-auto text-center">
             <a
               aria-label={link.label}
@@ -64,7 +64,7 @@ const navItems = [
         ))
       }
         <ThemeToggle />
-    </nav>
+    </menu>
   </aside>
 </header>
 
@@ -78,14 +78,14 @@ const navItems = [
 
 
 
-nav {
-  animation: nav-shadown 1s linear both;
+menu {
+  animation: menu-shadown 1s linear both;
   animation-timeline: scroll();
   animation-range: 0 100px;
   border-radius: 10px;
 }
 
-nav {
+menu {
   position: fixed;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -95,12 +95,12 @@ nav {
   display: flex;
 }
 
-nav li {
+menu li {
   list-style: none;
 
 }
 
-nav a {
+menu a {
   position: relative;
   display: flex;
   margin: 5px 0px;
@@ -116,7 +116,7 @@ nav a {
 }
 
 
-nav a:before {
+menu a:before {
   content: '';
   position: absolute;
   top: 0;
@@ -132,7 +132,7 @@ nav a:before {
   /* box-shadow: 0 4px 10px #A0D7FF; */
 }
 
-nav a:after {
+menu a:after {
   content: '';
   position: absolute;
   top: 2px;
@@ -147,16 +147,16 @@ nav a:after {
   z-index: -1;
 }
 
-nav a:hover {
+menu a:hover {
   color: #ffffff;
 }
 
-nav a:hover:before {
+menu a:hover:before {
   transform: scaleY(1);
   opacity: 1;
 }
 
-nav a:hover:after {
+menu a:hover:after {
   transform: scaleY(1);
   opacity: 1;
 }
@@ -184,7 +184,7 @@ button{
 }
   
 
-  @keyframes nav-shadown {
+  @keyframes menu-shadown {
     to {
       @apply backdrop-blur bg-[#2c235571];
       /*   */
@@ -198,13 +198,13 @@ button{
   }
 
   @media screen and (max-width: 1036px) {
-  nav a {
+  menu a {
     margin: 10px 0; 
     padding: 0px 10px;
     width: 20vw;
   }
 
-  nav {
+  menu {
     margin-top: 220px;
     width: inherit;
     display: flex;
@@ -296,7 +296,7 @@ button{
 
 
   @media screen and (max-width: 1420px) {
-  nav a {
+  menu a {
     width: 16vw;
   }
 }
