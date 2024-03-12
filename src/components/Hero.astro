@@ -17,7 +17,7 @@ import SocialPill from "./SocialPill.astro";
         class="img-1 rounded-full shadow-lg absolute top-0 left-0 w-full h-full transform scale-90"
         src="/renzo.webp"
         alt={personalImageAlt}
-        width="916" height="975"
+        width="987" height="997"
       />
 
       <!-- RECORDAR FORMATEAR A WEBP LAS IMAGENES PARA QUE PESE MENOS -->
@@ -25,12 +25,14 @@ import SocialPill from "./SocialPill.astro";
         class="img-2 rounded full absolute w-full h-full mix-blend-mode-overlay transform scale-105 "
         src={border}
         alt={borderImageAlt}
+        width="916" height="975"
       />
 
       <img
         class="img-2 rounded full absolute w-full h-full mix-blend-mode-overlay transform scale-105"
         src={border}
         alt={borderImageAlt}
+        width="916" height="975"
       />
     </div>
     <a
@@ -116,5 +118,21 @@ import SocialPill from "./SocialPill.astro";
 
   .img-2 {
     filter: brightness(1.5);
+  }
+
+  @media screen and (max-width: 500px) {
+
+    .superponer {
+      width: 20vh;
+      height: 20vh;
+    }
+
+    h1{
+      font-size:x-large;
+    }
+
+    p{
+      font-size: medium;
+    }
   }
 </style>

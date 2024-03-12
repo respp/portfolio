@@ -12,7 +12,7 @@ import Rocket from "./icons/Rocket.astro"
 
 const TAGS = {
   TAILWIND: {
-    name: "Tailwind CSS",
+    name: "Tailwind",
     class: "bg-gray-800 border-2 border-[#38B2AC] text-[#38B2AC] font-bold",
     icon: Tailwind,
   },
@@ -73,7 +73,7 @@ const PROJECTS = [
   {
     title: "Gelatto - CRUD y Sesiones",
     description:
-      "Actividad realizada para la materia de Implementación de Web Dinámicas,7mo Programación y presentada en la muestra anual de trabajos distritales",
+      "Actividad realizada para la materia de Implementación de Web Dinámicas,7mo Programación y presentada en la muestra anual de trabajos distritales.",
     image: "./projects/gelatto.webp",
     tags: [TAGS.PHP, TAGS.SQL, TAGS.CSS],
     github: "https://github.com/respp/registro_login_con_CRUD",
@@ -81,7 +81,7 @@ const PROJECTS = [
   {
   title: "Movie-Listing",
     description:
-      "Práctica en React donde aplico técnicas para mejorar el rendimiento y la usabilidad utilizando paginación, pageWrapper, uso de datos dinámicos, eventos, y demás",
+      "Práctica en React donde aplico técnicas para mejorar el rendimiento y la usabilidad utilizando paginación, pageWrapper, uso de datos dinámicos, eventos, y más.",
     image: "./projects/movielisting.webp",
     tags: [TAGS.REACT, TAGS.CSS, TAGS.JAVASCRIPT],
     github: "https://github.com/respp/MOVIE-LISTING",
@@ -89,7 +89,7 @@ const PROJECTS = [
   {
   title: "Space-X",
     description:
-      "Página web hecha en Astro con información de cada uno de sus lanzamientos y conexión a la API de Space X",
+      "Página web hecha en Astro con información de cada uno de sus lanzamientos y conexión a la API de Space X.",
     image: "./projects/spacex.webp",
     tags: [TAGS.ASTRO, TAGS.TYPESCRIPT],
     github: "https://github.com/respp/SpaceX-demo",
@@ -97,7 +97,7 @@ const PROJECTS = [
   {
   title: "Ver más",
     description:
-      "",
+      "Explora más proyectos en mi perfil de GitHub y descubre en todo lo que he estado trabajando. Si te interesa contribuir o simplemente quieres saber más, visita mi perfil y no dudes en seguirme!!",
     image: "./projects/github.webp",
     tags: [],
     github: "https://github.com/respp",
@@ -112,21 +112,21 @@ const PROJECTS = [
       <article class="rounded-2xl p-2 m-1  space-x-0 space-y-2 group bg-gray-800 dark:bg-[#28337d]"> 
             <div class="w-full lg:w-full xl:w-full ">
               <div class="relative items-center transition duration-500 ease-in-out  overflow-clip rounded-xl container">
-                <img alt="Imagen del Proyecto" class="object-cover object-top w-full h-38 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-100" loading="lazy" src={image} />
+                <img alt="Imagen del Proyecto" class="object-cover object-top w-full h-38 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-100" loading="lazy" src={image} width="960" height="720"/>
                 <div class="shadow"></div>
               </div>
             </div>
           
             <div class="p-2 text-center">
-              <h3 class="text-2xl font-bold dark:text-gray-100">
+              <h3 class="text-2xl font-bold dark:text-gray-100 text-center">
                 {title}
               </h3>
               <div class="flex flex-wrap mt-2 justify-center ">
-                <ul class="flex flex-row   gap-x-2">
+                <ul class="flex flex-row  justify-center items-center gap-x-2">
                     {tags.map((tag) => (
                       <li>
                         <span
-                          class={`flex gap-x-2 rounded-full text-sm ${tag.class} py-1 px-2 flex items-center`}
+                          class={`flex gap-x-2 rounded-full text-sm ${tag.class} py-1 px-2 flex items-center justify-center`}
                         >
                           <tag.icon class="size-5" />
                           {tag.name}
@@ -136,7 +136,7 @@ const PROJECTS = [
                   </ul>
           
                 <div class="mt-2 text-[#ffffff] dark:text-[#ffffff]">{description}</div>
-                <footer class="flex items-end justify-start mt-2 gap-x-4">
+                <footer class="flex items-center justify-center mt-2">
                     {github && (
                       <LinkButton href={github}>
                         <GitHub class="size-6" />
@@ -197,6 +197,27 @@ const PROJECTS = [
   .container:hover > .shadow{
     opacity: .9;
   }
+
+  @media screen and (max-width: 737px) {
+
+.card{
+ margin: auto;
+ width: 310px;
+}
+
+article{
+  min-height: 530px;
+}
+
+ul{
+  gap: 6px;
+}
+
+li span{
+  padding: 4px;
+  font-size: .8em;
+}
+}
 
 </style>
 
